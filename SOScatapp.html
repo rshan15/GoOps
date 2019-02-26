@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *">
+
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- Color theme for statusbar -->
+    <meta name="theme-color" content="#2196f3">
+    <!-- Your app title -->
+    <title>Dell App</title>
+    <!-- Path to Framework7 Library CSS -->
+    <link rel="stylesheet" href="lib/framework7/css/framework7.min.css">
+    <!-- Path to your custom app styles-->
+    <link href="css/style.css">
+    <link rel="stylesheet" href="css/framework7-icons.css">
+</head>
+
+<body>
+    <div id="app">
+        <!-- Statusbar overlay -->
+        <div class="statusbar"></div>
+        <div class="panel panel-left panel-reveal theme-dark">
+          <div class="view">
+            <div class="page">
+              <div class="navbar">
+                <div class="navbar-inner">
+                  <div class="title">Options</div>
+                </div>
+              </div>
+              <div class="page-content">
+                <div class="block">
+                    <div class="list">
+                          <ul>
+                            <li>
+                              <a href="DBInfo.html" class="link external item-link item-content">
+                                <div class="item-media"><i class="f7-icons">search</i></div>
+                                <div class="item-inner">
+                                  <div class="item-title">Database</div>
+                                </div>
+                              </a>
+                            </li>
+                            <li>
+                              <a href="index.html" class="link external item-link item-content">
+                                <div class="item-media"><i class="f7-icons">message</i></div>
+                                <div class="item-inner">
+                                  <div class="item-title">SOS</div>
+                                </div>
+                              </a>
+                            </li>
+                            <li>
+                              <a href="CriticalAlerts.html" class="link external item-link item-content">
+                                <div class="item-media"><i class="f7-icons">alert</i></div>
+                                <div class="item-inner">
+                                  <div class="item-title">Critical Alerts</div>
+                                </div>
+                              </a>
+                            </li>
+                          </ul>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="views tabs safe-areas">
+            <div id="view-home" class="view view-main tab tab-active">
+                <div class="page" data-name="home">
+                    <div class="navbar">
+                        <div class="navbar-inner sliding">
+                            <div class="left">
+                                <a href="#" class="link icon-only panel-open" data-panel="left"> 
+                                  <i class="f7-icons">menu</i>
+                                </a>
+                            </div> 
+                            <div class="title">SOS</div>
+                        </div>
+                    </div>
+                    <div class="toolbar tabbar tabbar-labels toolbar-bottom-md">
+                        <div class="toolbar-inner">
+                          <a href="#tab-1" class="tab-link">
+                            <!-- Different icons for iOS and MD themes -->
+                            <i class="f7-icons">home</i>
+                            <!-- Label text -->
+                            <span class="tabbar-label">Home</span>
+                          </a>
+                          <a href="#tab-2" class="tab-link tab-link-active">
+                            <i class="f7-icons">list</i>
+                            <span class="tabbar-label">DBA Online</span>
+                          </a>
+                          <a href="#tab-3" class="tab-link">
+                            <i class="f7-icons">settings</i>
+                            <span class="tabbar-label">Settings</span>    
+                          </a>
+                        </div>
+                    </div>
+                    <div class="page-content ">
+                        <p>> Database > Select Applications for SOS</p>
+						<table width='100%' style='border:0' cellspacing=3 cellpadding=3>
+							<tr><td align=center>
+								<a href="SOScatappsupp.html" class="link external item-link item-content">
+									<input type=button class="button button-small button-round button-raised button-outline" value='Glovia' style="height:30px; width:300px">
+								</a></td></tr>
+							<tr><td align=center><input type=button class="button button-small button-round button-raised button-outline" value='ACE' style="height:30px; width:300px"></td></tr>
+							<tr><td align=center><input type=button class="button button-small button-round button-raised button-outline" value='ACT - VCE' style="height:30px; width:300px"></td></tr>
+							<tr><td align=center><input type=button class="button button-small button-round button-raised button-outline" value='AGILE' style="height:30px; width:300px"></td></tr>
+							<tr><td align=center><input type=button class="button button-small button-round button-raised button-outline" value='APC' style="height:30px; width:300px"></td></tr>
+							<tr><td align=center><input type=button class="button button-small button-round button-raised button-outline" value='AUTOMATION PROCESS EXECUTIVE (APE)' style="height:30px; width:300px"></td></tr>
+							<tr><td align=center><input type=button class="button button-small button-round button-raised button-outline" value='AVAILABLE TO SELL (ATS) / DELIVERY PROMISE' style="height:30px; width:300px"></td></tr>
+							<tr><td align=center><input type=button  class="button button-small button-round button-raised button-outline"value='BTO STUDIO ORDERGEN' style="height:30px; width:300px"></td></tr>
+							<tr><td align=center><input type=button class="button button-small button-round button-raised button-outline" value='BUSINESS INTELLIGENCE (BI) DATAMART AND ANALYTICS' style="height:30px; width:300px"></td></tr>
+							<tr><td align=center><input type=button class="button button-small button-round button-raised button-outline" value='BUSINESS ORCHESTRATION SYSTEM AND SERVICES (BOSS)' style="height:30px; width:300px"></td></tr>
+							<tr><td align=center><input type=button class="button button-small button-round button-raised button-outline" value='CCE' style="height:30px; width:300px"></td></tr>
+							<tr><td align=center><input type=button class="button button-small button-round button-raised button-outline" value='CDARS' style="height:30px; width:300px"></td></tr>
+							<tr><td align=center><input type=button class="button button-small button-round button-raised button-outline" value='CFO SHARED SERVICE' style="height:30px; width:300px"></td></tr>
+							<tr><td align=center><input type=button class="button button-small button-round button-raised button-outline" value='CLEARQUEST' style="height:30px; width:300px"></td></tr>
+							<tr><td align=center><input type=button class="button button-small button-round button-raised button-outline" value='CLIPPERSHIP MFG' style="height:30px; width:300px"></td></tr>
+							<tr><td align=center><input type=button class="button button-small button-round button-raised button-outline" value='CLOUDIQ -MIDDLEWARE' style="height:30px; width:300px"></td></tr>
+							<tr><td align=center><input type=button class="button button-small button-round button-raised button-outline" value='COMPLIANCE INTEGRATION SERVICES (CIS)' style="height:30px; width:300px"></td></tr>
+							<tr><td align=center><input type=button class="button button-small button-round button-raised button-outline" value='DIGITAL FULFILLMENT' style="height:30px; width:300px"></td></tr>
+							<tr><td align=center><input type=button class="button button-small button-round button-raised button-outline" value='DRAGONFX APJ' style="height:30px; width:300px"></td></tr>
+							<tr><td align=center><input type=button class="button button-small button-round button-raised button-outline" value='DRAGONFX DAO' style="height:30px; width:300px"></td></tr>
+							<tr><td align=center><input type=button class="button button-small button-round button-raised button-outline" value='E-REQ' style="height:30px; width:300px"></td></tr>
+							<tr><td align=center><input type=button class="button button-small button-round button-raised button-outline" value='ELMS' style="height:30px; width:300px"></td></tr>
+							<tr><td align=center><input type=button class="button button-small button-round button-raised button-outline" value='ELMS PORTAL' style="height:30px; width:300px"></td></tr>
+							<tr><td align=center><input type=button class="button button-small button-round button-raised button-outline" value='EXPORT COMPLIANCE TRADESPHERE' style="height:30px; width:300px"></td></tr>
+							<tr><td align=center><input type=button class="button button-small button-round button-raised button-outline" value='FIMS EMEA' style="height:30px; width:300px"></td></tr>
+							<tr><td align=center><input type=button class="button button-small button-round button-raised button-outline" value='FSL ( FULFILLMENT SERVICES LAYER )' style="height:30px; width:300px"></td></tr>
+							<tr><td align=center><input type=button class="button button-small button-round button-raised button-outline" value='FULFILLMENT ORDER ORCHESTRATION ENGINE (FOOE)' style="height:30px; width:300px"></td></tr>
+							<tr><td align=center><input type=button class="button button-small button-round button-raised button-outline" value='GEMSTONE' style="height:30px; width:300px"></td></tr>
+							<tr><td align=center><input type=button class="button button-small button-round button-raised button-outline" value='GFX' style="height:30px; width:300px"></td></tr>
+							<tr><td align=center><input type=button class="button button-small button-round button-raised button-outline" value='GLOVIA APCC/ICC' style="height:30px; width:300px"></td></tr>
+							<tr><td align=center><input type=button class="button button-small button-round button-raised button-outline" value='GLOVIA BRH' style="height:30px; width:300px"></td></tr>
+							<tr><td align=center><input type=button class="button button-small button-round button-raised button-outline" value='GLOVIA CCC2/CCC4' style="height:30px; width:300px"></td></tr>
+							<tr><td align=center><input type=button class="button button-small button-round button-raised button-outline" value='GLOVIA DAO/ASL' style="height:30px; width:300px"></td></tr>
+							<tr><td align=center><input type=button class="button button-small button-round button-raised button-outline" value='GLOVIA EMF' style="height:30px; width:300px"></td></tr>
+							<tr><td align=center><input type=button class="button button-small button-round button-raised button-outline" value='GLOVIA GLOBAL PRINCIPAL (DGPC)' style="height:30px; width:300px"></td></tr>
+							<tr><td align=center><input type=button class="button button-small button-round button-raised button-outline" value='GOAL EMEA' style="height:30px; width:300px"></td></tr>
+							<tr><td align=center><input type=button class="button button-small button-round button-raised button-outline" value='HUB COLLABORATION APJ' style="height:30px; width:300px"></td></tr>
+							<tr><td align=center><input type=button class="button button-small button-round button-raised button-outline" value='HUB COLLABORATION BRH' style="height:30px; width:300px"></td></tr>
+							<tr><td align=center><input type=button class="button button-small button-round button-raised button-outline" value='HUB COLLABORATION DAO' style="height:30px; width:300px"></td></tr>
+							<tr><td align=center><input type=button class="button button-small button-round button-raised button-outline" value='HUB COLLABORATION EMF' style="height:30px; width:300px"></td></tr>
+							<tr><td align=center><input type=button class="button button-small button-round button-raised button-outline" value='KEWILL' style="height:30px; width:300px"></td></tr>
+							<tr><td align=center><input type=button class="button button-small button-round button-raised button-outline" value='KEWILL FULFILLMENT INTEGRATION LAYER (FIL)' style="height:30px; width:300px"></td></tr>
+							<tr><td align=center><input type=button class="button button-small button-round button-raised button-outline" value='LDR' style="height:30px; width:300px"></td></tr>
+							<tr><td align=center><input type=button class="button button-small button-round button-raised button-outline" value='LOFTWARE (APEX)' style="height:30px; width:300px"></td></tr>
+							<tr><td align=center><input type=button class="button button-small button-round button-raised button-outline" value='LOFTWARE (CORK)' style="height:30px; width:300px"></td></tr>
+							<tr><td align=center><input type=button class="button button-small button-round button-raised button-outline" value='LOFTWARE (FRANKLIN)' style="height:30px; width:300px"></td></tr>
+							<tr><td align=center><input type=button class="button button-small button-round button-raised button-outline" value='LOGISTICSSERVICES' style="height:30px; width:300px"></td></tr>
+							<tr><td align=center><input type=button class="button button-small button-round button-raised button-outline" value='MANUFACTURING SERVICES LAYER' style="height:30px; width:300px"></td></tr>
+							<tr><td align=center><input type=button class="button button-small button-round button-raised button-outline" value='MES DYNAMICS AX' style="height:30px; width:300px"></td></tr>
+							<tr><td align=center><input type=button class="button button-small button-round button-raised button-outline" value='MSS/MSS2 - ARB' style="height:30px; width:300px"></td></tr>
+							<tr><td align=center><input type=button class="button button-small button-round button-raised button-outline" value='OFS' style="height:30px; width:300px"></td></tr>
+							<tr><td align=center><input type=button class="button button-small button-round button-raised button-outline" value='OPP (ORDERPREPROCESSOR)' style="height:30px; width:300px"></td></tr>
+							<tr><td align=center><input type=button class="button button-small button-round button-raised button-outline" value='ORACLE GLOBAL TRADE MANAGEMENT (GTM)' style="height:30px; width:300px"></td></tr>
+							<tr><td align=center><input type=button class="button button-small button-round button-raised button-outline" value='ORACLE TRANSPORTATION MANAGEMENT (OTM)' style="height:30px; width:300px"></td></tr>
+							<tr><td align=center><input type=button class="button button-small button-round button-raised button-outline" value='PERFORCE DPSG (DATA PROTECTION SOFTWARE GROUP)' style="height:30px; width:300px"></td></tr>
+							<tr><td align=center><input type=button class="button button-small button-round button-raised button-outline" value='PRINT LABEL (APEX)' style="height:30px; width:300px"></td></tr>
+							<tr><td align=center><input type=button class="button button-small button-round button-raised button-outline" value='PRINT LABEL (CORK)' style="height:30px; width:300px"></td></tr>
+							<tr><td align=center><input type=button class="button button-small button-round button-raised button-outline" value='PRINT LABEL (FRANKLIN)' style="height:30px; width:300px"></td></tr>
+							<tr><td align=center><input type=button class="button button-small button-round button-raised button-outline" value='RECEIPT INVOICE COLLABORATION TOOL  (RICT)' style="height:30px; width:300px"></td></tr>
+							<tr><td align=center><input type=button class="button button-small button-round button-raised button-outline" value='SAP - DIRECT PROCUREMENT' style="height:30px; width:300px"></td></tr>
+							<tr><td align=center><input type=button class="button button-small button-round button-raised button-outline" value='SAP - INVENTORY / WAREHOUSE MANAGEMENT' style="height:30px; width:300px"></td></tr>
+							<tr><td align=center><input type=button class="button button-small button-round button-raised button-outline" value='SAP - LOGISTICS / TRANSPORTATION / SHIPPING' style="height:30px; width:300px"></td></tr>
+							<tr><td align=center><input type=button class="button button-small button-round button-raised button-outline" value='SAP - MATERIALS/BOM MANAGEMENT' style="height:30px; width:300px"></td></tr>
+							<tr><td align=center><input type=button class="button button-small button-round button-raised button-outline" value='SAP - PRODUCT LIFECYCLE MANAGEMENT' style="height:30px; width:300px"></td></tr>
+							<tr><td align=center><input type=button class="button button-small button-round button-raised button-outline" value='SAP - PRODUCTION EXECUTION / MANUFACTURING / PRODUCTION ORDERS' style="height:30px; width:300px"></td></tr>
+							<tr><td align=center><input type=button class="button button-small button-round button-raised button-outline" value='SAP - QUALITY MANAGEMENT' style="height:30px; width:300px"></td></tr>
+							<tr><td align=center><input type=button class="button button-small button-round button-raised button-outline" value='SAP - S&OP SALES AND OPERATIONS PLANNING' style="height:30px; width:300px"></td></tr>
+							<tr><td align=center><input type=button class="button button-small button-round button-raised button-outline" value='SAP -SPRC ENVIRONMENTAL HEALTH & SAFETY AND REACH' style="height:30px; width:300px"></td></tr>
+							<tr><td align=center><input type=button class="button button-small button-round button-raised button-outline" value='SIPP' style="height:30px; width:300px"></td></tr>
+							<tr><td align=center><input type=button class="button button-small button-round button-raised button-outline" value='SUPPLY CHAIN DATA HUB (SCDH)' style="height:30px; width:300px"></td></tr>
+							<tr><td align=center><input type=button class="button button-small button-round button-raised button-outline" value='TRADESPHERE (EMS2000)' style="height:30px; width:300px"></td></tr>
+						</table>
+                        <!--<a href="/about/" data-view=".page-content">About app</a>-->
+                    </div>
+                </div>
+            </div>
+
+            
+            <div id="view-catalog" class="view tab">
+                <!-- Catalog page will be loaded here dynamically from /catalog/ route -->
+            </div>
+
+              <!-- Settings View -->
+            <div id="view-settings" class="view tab">
+                <!-- Settings page will be loaded here dynamically from /settings/ route -->
+            </div>
+    
+        <!-- Your main view, should have "view-main" class -->
+        
+    </div>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
+    <script type="text/javascript" src="js/my-app.js"></script>
+</body>
+
+</html>

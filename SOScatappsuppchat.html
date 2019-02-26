@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *">
+
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- Color theme for statusbar -->
+    <meta name="theme-color" content="#2196f3">
+    <!-- Your app title -->
+    <title>Dell App</title>
+    <!-- Path to Framework7 Library CSS -->
+    <link rel="stylesheet" href="lib/framework7/css/framework7.min.css">
+    <!-- Path to your custom app styles-->
+    <link href="css/style.css">
+    <link rel="stylesheet" href="css/framework7-icons.css">
+</head>
+
+<body>
+    <div id="app">
+        <!-- Statusbar overlay -->
+        <div class="statusbar"></div>
+        <div class="panel panel-left panel-reveal theme-dark">
+          <div class="view">
+            <div class="page">
+              <div class="navbar">
+                <div class="navbar-inner">
+                  <div class="title">Options</div>
+                </div>
+              </div>
+              <div class="page-content">
+                <div class="block">
+                    <div class="list">
+                          <ul>
+                            <li>
+                             <a href="DBInfo.html" class="link external item-link item-content">
+                                <div class="item-media"><i class="f7-icons">search</i></div>
+                                <div class="item-inner">
+                                  <div class="item-title">Database</div>
+                                </div>
+                              </a>
+                            </li>
+                            <li>
+                              <a href="SOS.html" class="link external item-link item-content">
+                                <div class="item-media"><i class="f7-icons">message</i></div>
+                                <div class="item-inner">
+                                  <div class="item-title">SOS</div>
+                                </div>
+                              </a>
+                            </li>
+                            <li>
+                              <a href="CriticalAlerts.html" class="link external item-link item-content">
+                                <div class="item-media"><i class="f7-icons">alert</i></div>
+                                <div class="item-inner">
+                                  <div class="item-title">Critical Alerts</div>
+                                </div>
+                              </a>
+                            </li>
+                          </ul>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="views tabs safe-areas">
+            <div id="view-home" class="view view-main tab tab-active">
+                <div class="page" data-name="home">
+                    <div class="navbar">
+                        <div class="navbar-inner sliding">
+                            <div class="left">
+                                <a href="#" class="link icon-only panel-open" data-panel="left"> 
+                                  <i class="f7-icons">menu</i>
+                                </a>
+                            </div> 
+                            <div class="title">SOS</div>
+                        </div>
+                    </div>
+                    <!--<div class="toolbar tabbar tabbar-labels toolbar-bottom-md">
+                        <div class="toolbar-inner">
+                          <a href="#tab-1" class="tab-link">
+                            <i class="f7-icons">home</i>
+                            <span class="tabbar-label">Home</span>
+                          </a>
+                          <a href="#tab-2" class="tab-link tab-link-active">
+                            <i class="f7-icons">list</i>
+                            <span class="tabbar-label">DBA Online</span>
+                          </a>
+                          <a href="#tab-3" class="tab-link">
+                            <i class="f7-icons">settings</i>
+                            <span class="tabbar-label">Settings</span>    
+                          </a>
+                        </div>
+                    </div> -->
+                    <div class="toolbar messagebar">
+                      <div class="toolbar-inner">
+                        <div class="messagebar-area">
+                          <textarea class="resizable" placeholder="Message"></textarea>
+                        </div><a class="link send-link" href="#">Send</a>
+                      </div>
+                    </div>
+                    <div class="page-content messages-content">
+                      <div class="messages">
+                        <div class="messages-title"><b>Sunday, Feb 6,</b> 12:58</div>
+                        <div class="message message-sent">
+                          <div class="message-content">
+                            <div class="message-bubble">
+                              <div class="message-text">Hi, Tai Ee</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="message message-sent">
+                          <div class="message-content">
+                            <div class="message-bubble">
+                              <div class="message-text">can you help me to check if anything with database Glovia?</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="message message-received">
+                          <div class="message-content">
+                            <div class="message-name">Ooi,Tai Ee</div>
+                            <div class="message-bubble">
+                              <div class="message-text">Hold On</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="message message-received">
+                          <div class="message-content">
+                            <div class="message-bubble">
+                              <div class="message-text">Let me take a quick look</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="message message-sent">
+                          <div class="message-content">
+                            <div class="message-bubble">
+                              <div class="message-text">Thank You</div>
+                            </div>  
+                          </div>
+                        </div>
+                        <div class="message message-received">
+                          <div class="message-content">
+                            <div class="message-name">Ooi,Tai Ee</div>
+                            <div class="message-bubble">
+                              <div class="message-text">FYI, DB down for maintenance.</div>
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+                       <!-- <p>> Database > Glovia > Chat with support </p>
+              						<table width='100%' style='border:0' cellspacing=3 cellpadding=3>
+              							<tr>
+              								<td align=left>Support Name: <font color=blue>Ooi Tai Ee</a></td>
+
+              							</tr>
+              							<tr>
+              								<td align=left> 
+              								<textarea  style="border:solid 1px #ccc;color:darkmagenta " id="drawerBody" cols="50" rows="20" >
+                                Me: Hi can you help me to check if anything with database Glovia?
+
+                                Tai Ee: Let me take a quick look...
+                                							
+                                Me: Thank you.
+
+                                Tai Ee: FYI, DB down for maintenance. 
+              								</textarea>
+              								
+              								</td>
+
+              							</tr>
+              							<tr>
+              								<td align=left>
+              								<input type=textbox style="height:15px; width:200px">
+              								<input type=button value='Send' style="height:25px; width:80px">
+              								</td>
+
+              							</tr>
+
+              							
+              						</table> -->
+                        <!--<a href="/about/" data-view=".page-content">About app</a>-->
+                    </div>
+                </div>
+            </div>
+
+            
+            <div id="view-catalog" class="view tab">
+                <!-- Catalog page will be loaded here dynamically from /catalog/ route -->
+            </div>
+
+              <!-- Settings View -->
+            <div id="view-settings" class="view tab">
+                <!-- Settings page will be loaded here dynamically from /settings/ route -->
+            </div>
+    
+        <!-- Your main view, should have "view-main" class -->
+        
+    </div>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
+    <script type="text/javascript" src="js/my-app.js"></script>
+    <script type="text/javascript">
+      // Init Messages
+var messages = app.messages.create({
+  el: '.messages',
+
+  // First message rule
+  firstMessageRule: function (message, previousMessage, nextMessage) {
+    // Skip if title
+    if (message.isTitle) return false;
+    /* if:
+      - there is no previous message
+      - or previous message type (send/received) is different
+      - or previous message sender name is different
+    */
+    if (!previousMessage || previousMessage.type !== message.type || previousMessage.name !== message.name) return true;
+    return false;
+  },
+  // Last message rule
+  lastMessageRule: function (message, previousMessage, nextMessage) {
+    // Skip if title
+    if (message.isTitle) return false;
+    /* if:
+      - there is no next message
+      - or next message type (send/received) is different
+      - or next message sender name is different
+    */
+    if (!nextMessage || nextMessage.type !== message.type || nextMessage.name !== message.name) return true;
+    return false;
+  },
+  // Last message rule
+  tailMessageRule: function (message, previousMessage, nextMessage) {
+    // Skip if title
+    if (message.isTitle) return false;
+      /* if (bascially same as lastMessageRule):
+      - there is no next message
+      - or next message type (send/received) is different
+      - or next message sender name is different
+    */
+    if (!nextMessage || nextMessage.type !== message.type || nextMessage.name !== message.name) return true;
+    return false;
+  }
+});
+
+// Init Messagebar
+var messagebar = app.messagebar.create({
+  el: '.messagebar'
+});
+
+// Response flag
+var responseInProgress = false;
+
+// Send Message
+$$('.send-link').on('click', function () {
+  var text = messagebar.getValue().replace(/\n/g, '<br>').trim();
+  // return if empty message
+  if (!text.length) return;
+
+  // Clear area
+  messagebar.clear();
+
+  // Return focus to area
+  messagebar.focus();
+
+  // Add message to messages
+  messages.addMessage({
+    text: text,
+  });
+
+  if (responseInProgress) return;
+  // Receive dummy message
+  receiveMessage();
+});
+
+// Dummy response
+var answers = [
+  'Yes?',
+  'How can I help you?',
+  'Sorry. Im working on a P1 issue now',
+  'I am not sure',
+  'Hey',
+  'Give me a moment',
+  'Hold on',
+  'What?',
+  'Hi. Morning',
+  'Of course',
+  'In a meeting',
+  'I am driving now'
+]
+var people = [
+  {
+    name: 'Ooi, Tai Ee'
+  },
+  {
+    name: 'Ooi, Tai Ee'
+  }
+];
+function receiveMessage() {
+  responseInProgress = true;
+  setTimeout(function () {
+    // Get random answer and random person
+    var answer = answers[Math.floor(Math.random() * answers.length)];
+    var person = people[Math.floor(Math.random() * people.length)];
+
+    // Show typing indicator
+    messages.showTyping({
+      header: person.name + ' is typing'
+    });
+
+    setTimeout(function () {
+      // Add received dummy message
+      messages.addMessage({
+        text: answer,
+        type: 'received',
+        name: person.name
+      });
+      // Hide typing indicator
+      messages.hideTyping();
+      responseInProgress = false;
+    }, 4000);
+  }, 1000);
+}
+    </script>
+</body>
+
+</html>

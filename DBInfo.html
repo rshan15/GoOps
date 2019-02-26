@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *">
+
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- Color theme for statusbar -->
+    <meta name="theme-color" content="#2196f3">
+    <!-- Your app title -->
+    <title>Dell App</title>
+    <!-- Path to Framework7 Library CSS -->
+    <link rel="stylesheet" href="lib/framework7/css/framework7.min.css">
+    <!-- Path to your custom app styles-->
+    <link href="css/style.css">
+    <link rel="stylesheet" href="css/framework7-icons.css">
+</head>
+
+<body>
+    <div id="app">
+        <!-- Statusbar overlay -->
+        <div class="statusbar"></div>
+        <div class="panel panel-left panel-reveal theme-dark">
+          <div class="view">
+            <div class="page">
+              <div class="navbar">
+                <div class="navbar-inner">
+                  <div class="title">Options</div>
+                </div>
+              </div>
+              <div class="page-content">
+                <div class="block">
+                    <div class="list">
+                          <ul>
+                            <li>
+                              <a href="DBInfo.html" class="link external item-link item-content">
+                                <div class="item-media"><i class="f7-icons">search</i></div>
+                                <div class="item-inner">
+                                  <div class="item-title">Database</div>
+                                </div>
+                              </a>
+                            </li>
+                            <li>
+                              <a href="SOS.html" class="link external item-link item-content">
+                                <div class="item-media"><i class="f7-icons">message</i></div>
+                                <div class="item-inner">
+                                  <div class="item-title">SOS</div>
+                                </div>
+                              </a>
+                            </li>
+                            <li>
+                              <a href="CriticalAlerts.html" class="link external item-link item-content">
+                                <div class="item-media"><i class="f7-icons">alert</i></div>
+                                <div class="item-inner">
+                                  <div class="item-title">Critical Alerts</div>
+                                </div>
+                              </a>
+                            </li>
+                          </ul>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="views tabs safe-areas">
+            <div id="view-home" class="view view-main tab tab-active">
+                <div class="page" data-name="home">
+                    <div class="navbar">
+                        <div class="navbar-inner sliding">
+
+                            <div class="left">
+                                <a href="#" class="link icon-only panel-open" data-panel="left"> 
+                                  <i class="f7-icons">menu</i>
+                                </a>
+                            </div> 
+                            <div class="title">Dell App</div>
+                        </div>
+                    </div>
+                    <div class="toolbar tabbar tabbar-labels toolbar-bottom-md">
+                        <div class="toolbar-inner">
+                          <a href="index.html" class="link external tab-link tab-link-active">
+                            <!-- Different icons for iOS and MD themes -->
+                            <i class="f7-icons">home</i>
+                            <!-- Label text -->
+                          </a>
+                          <a href="#tab-2" class="tab-link">
+                            <i class="f7-icons">list</i>
+                          </a>
+                          <a href="#tab-3" class="tab-link">
+                            <i class="f7-icons">settings</i>   
+                          </a>
+                        </div>
+                    </div>
+                    <div class="page-content ">
+                        <div class="list no-hairlines-md">
+                          <div class="block-header">Database QuickInfo</div>
+                          <ul>
+                            <li class="item-content item-input inline-label">
+                              <div class="item-inner">
+                                <div class="item-title item-label">DB Name</div>
+                                <div class="item-input-wrap">
+                                  <input id="autocomplete-dropdown-expand" type="text" placeholder="eg: database.prd.dell.com">
+                                </div>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="block">
+                            <div class="row">
+                              <div class="col-33"></div>
+                              <div class="col-33">
+                                <button class="col button button-raised button-fill button-round">Search</button>
+                              </div>
+                              <div class="col-33"></div>
+                            </div>  
+                        </div>
+                        <div class="block-title">RTPRDP.PRD.DELL.COM</div>
+                        <div class="block block-strong inset">
+                            <div class="row">
+                              <div class="col-25"></div>
+                              <div class="col-25"></div>
+                              <div class="col-25"><i class="icon f7-icons icon-tooltip">drawers_fill</i></div>
+                              <div class="col-25"><i class="icon f7-icons icon-tooltip2">drawers_fill</i></div>
+                            </div>
+                            <div class="row">
+                              <div class="col-25">Database</div>
+                              <div class="col-25"></div>
+                              <div class="col-25"><i class="icon f7-icons color-red">arrow_down_round_fill</i></div>
+                              <div class="col-25"><i class="icon f7-icons color-green">arrow_up_round_fill</i></div>
+                            </div>  
+                            <div class="row">
+                              <div class="col-25">Listener</div>
+                              <div class="col-25"></div>
+                              <div class="col-25"><i class="icon f7-icons color-green">arrow_up_round_fill</i></div>
+                              <div class="col-25"><i class="icon f7-icons color-green">arrow_up_round_fill</i></div>
+                            </div>
+                            <div class="block block-strong inset">
+                              <div class="row">
+                                <div class="col text-align-center">
+                                  <div
+                                    class="gauge gauge-init"
+                                    data-type="semicircle"
+                                    data-value="0.5"
+                                    data-value-text="50%"
+                                    data-value-text-color="#e91e63"
+                                    data-border-color="#e91e63"
+                                    data-label-text="CPU"
+                                    data-label-text-color="#333"
+                                  ></div>
+                                </div>
+                                <div class="col text-align-center">
+                                  <div
+                                    class="gauge gauge-init"
+                                    data-type="semicircle"
+                                    data-value="0.72"
+                                    data-value-text="72%"
+                                    data-value-text-color="#e91e63"
+                                    data-border-color="#e91e63"
+                                    data-label-text="Memory"
+                                    data-label-text-color="#333"
+                                  ></div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="block block-strong inset">
+                              <div class="row">
+                                <div class="col">
+                                  Contact DBA
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="list">
+                                  <ul>
+                                    <li>
+                                      <a href="#" class="item-link item-content">
+                                        <div class="item-media"><i class="icon f7-icons">person_round</i></div>
+                                        <div class="item-inner">
+                                          <div class="item-title">
+                                            <div class="item-header">Shanand_Reddy@dell.com</div>
+                                            | Shanand Reddy
+                                          </div>
+                                          <div class="item-after"><i class="icon f7-icons">message</i></div>
+                                        </div>
+                                      </a>
+                                    </li>
+                                    <li>
+                                      <a href="#" class="item-link item-content">
+                                        <div class="item-media"><i class="icon f7-icons">person_round</i></div>
+                                        <div class="item-inner">
+                                          <div class="item-title">
+                                            <div class="item-header">Cheah_Beng_Kiong@dell.com</div>
+                                            | Cheah, Beng Kiong
+                                          </div>
+                                          <div class="item-after"><i class="icon f7-icons">message</i></div>
+                                        </div>
+                                      </a>
+                                    </li>
+                                    <li>
+                                      <a href="SOScatappsuppchat.html" class="link external item-link item-content">
+                                        <div class="item-media"><i class="icon f7-icons">person_round</i></div>
+                                        <div class="item-inner">
+                                          <div class="item-title">
+                                            <div class="item-header">Ooi_Tai_Ee@dell.com</div>
+                                            | Ooi, Tai Ee
+                                          </div>
+                                          <div class="item-after"><i class="icon f7-icons">message</i></div>
+                                        </div>
+                                      </a>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div id="view-catalog" class="view tab">
+                <!-- Catalog page will be loaded here dynamically from /catalog/ route -->
+            </div>
+
+              <!-- Settings View -->
+            <div id="view-settings" class="view tab">
+                <!-- Settings page will be loaded here dynamically from /settings/ route -->
+            </div>
+    
+        <!-- Your main view, should have "view-main" class -->
+        
+    </div>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
+    <script type="text/javascript" src="js/my-app.js"></script>
+    <script>
+      var iconTooltip = app.tooltip.create({
+        targetEl: '.icon-tooltip',
+        text: 'ausplmggea2db01.us.dell.com',
+      });
+      var iconTooltip = app.tooltip.create({
+        targetEl: '.icon-tooltip2',
+        text: 'ausplmggea2db02.us.dell.com',
+      });
+      var databases = ('mrccp mrprd rtprd scdhp olap pubdbp rimdbp').split(' ');
+      var autocompleteDropdownExpand = app.autocomplete.create({
+        inputEl: '#autocomplete-dropdown-expand',
+        openIn: 'dropdown',
+        expandInput: true, // expand input
+        source: function (query, render) {
+          var results = [];
+          if (query.length === 0) {
+            render(results);
+            return;
+          }
+          // Find matched items
+          for (var i = 0; i < databases.length; i++) {
+            if (databases[i].toLowerCase().indexOf(query.toLowerCase()) >= 0) results.push(databases[i]);
+          }
+          // Render items by passing array with result items
+          render(results);
+        }
+      });
+    </script>
+</body>
+
+</html>
+
+<!--
+  hbbbbwgbbb
+-->
+

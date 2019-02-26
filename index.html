@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *">
+
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- Color theme for statusbar -->
+    <meta name="theme-color" content="#2196f3">
+    <!-- Your app title -->
+    <title>Dell App</title>
+    <!-- Path to Framework7 Library CSS -->
+    <link rel="stylesheet" href="lib/framework7/css/framework7.min.css">
+    <!-- Path to your custom app styles-->
+    <link href="css/style.css">
+    <link rel="stylesheet" href="css/framework7-icons.css">
+    <script type="text/javascript" src="js/Chart.bundle.js"></script>
+    <script type="text/javascript" src="js/utils.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- Statusbar overlay -->
+        <div class="statusbar"></div>
+        <div class="panel panel-left panel-reveal theme-dark">
+          <div class="view">
+            <div class="page">
+              <div class="navbar">
+                <div class="navbar-inner">
+                  <div class="title">Options</div>
+                </div>
+              </div>
+              <div class="page-content">
+                <div class="block">
+                    <div class="list">
+                          <ul>
+                            <li>
+                             <a href="DBInfo.html" class="link external item-link item-content">
+                                <div class="item-media"><i class="f7-icons">search</i></div>
+                                <div class="item-inner">
+                                  <div class="item-title">Database</div>
+                                </div>
+                              </a>
+                            </li>
+                            <li>
+                              <a href="SOS.html" class="link external item-link item-content">
+                                <div class="item-media"><i class="f7-icons">message</i></div>
+                                <div class="item-inner">
+                                  <div class="item-title">SOS</div>
+                                </div>
+                              </a>
+                            </li>
+                            <li>
+                              <a href="CriticalAlerts.html" class="link external item-link item-content">
+                                <div class="item-media"><i class="f7-icons">alert</i></div>
+                                <div class="item-inner">
+                                  <div class="item-title">Critical Alerts</div>
+                                </div>
+                              </a>
+                            </li>
+                          </ul>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="views tabs safe-areas">
+            <div id="view-home" class="view view-main tab tab-active">
+                <div class="page" data-name="home">
+                    <div class="navbar">
+                        <div class="navbar-inner sliding">
+                            <div class="left">
+                                <a href="#" class="link icon-only panel-open" data-panel="left"> 
+                                  <i class="f7-icons">menu</i>
+                                </a>
+                            </div> 
+                            <div class="title">Dell App</div>
+                        </div>
+                    </div>
+                    <div class="toolbar tabbar tabbar-labels toolbar-bottom-md">
+                        <div class="toolbar-inner">
+                          <a href="SOS.html" class="tab-link tab-link-active">
+                            <!-- Different icons for iOS and MD themes -->
+                            <i class="f7-icons">home</i>
+                            <!-- Label text -->
+                            <span class="tabbar-label">Home</span>
+                          </a>
+                          <a href="#tab-2" class="tab-link">
+                            <i class="f7-icons">list</i>
+                            <span class="tabbar-label">DBA Online</span>
+                          </a>
+                          <a href="#tab-3" class="tab-link">
+                            <i class="f7-icons">settings</i>
+                            <span class="tabbar-label">Settings</span>    
+                          </a>
+                        </div>
+                    </div>
+                    <div class="page-content ">
+                      <div class="block-title">DB Overview</div>
+                      <div class="block block-strong inset">
+                        <div class="row">
+                          <canvas id="chart-area"></canvas>
+                        </div>
+                      </div>
+                      <div class="block-title">EVENTS</div>
+
+                      <div class="card card-expandable">
+                        <div class="card-content">
+                          <div class="bg-color-red" style="height: 50px">
+                            <div class="card-header text-color-white display-block">
+                              P1 CRITICAL INCIDENT
+                              <br>
+                              <small style="opacity: 0.7">INC8235464</small>
+                            </div>
+                          </div>
+                          <div class="card-content-padding">
+                            <p>Support Agents are unable to remote into Customer's systems to perform troubleshooting actions</p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="card card-expandable">
+                        <div class="card-content">
+                          <div class="bg-color-green" style="height: 50px">
+                            <div class="card-header text-color-white display-block">
+                              Global MFG maintenance
+                              <br>
+                              <small style="opacity: 0.7">CHG792341</small>
+                            </div>
+                            <a href="#" class="link card-close card-opened-fade-in color-white" style="position: absolute; right: 15px; top: 15px">
+                              
+                            </a>
+                          </div>
+                          <div class="card-content-padding">
+                            <div class="row">
+                                Date: 20th April 2019
+                            </div>
+                            <div class="row">
+                                Class 1: 24 databases
+                            </div>
+                            <div class="row">
+                                Class 2: 33 databases
+                            </div>
+                            <div class="row">
+                                Class 3: 76 databases
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div id="view-catalog" class="view tab">
+                <!-- Catalog page will be loaded here dynamically from /catalog/ route -->
+            </div>
+
+              <!-- Settings View -->
+            <div id="view-settings" class="view tab">
+                <!-- Settings page will be loaded here dynamically from /settings/ route -->
+            </div>
+    
+        <!-- Your main view, should have "view-main" class -->
+        
+    </div>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
+    <script type="text/javascript" src="js/my-app.js"></script>
+    <script>
+
+    var config = {
+      type: 'pie',
+      data: {
+        datasets: [{
+            data: [10, 20, 312,15],
+            backgroundColor: [
+            window.chartColors.red,
+            window.chartColors.yellow,
+            window.chartColors.green,
+            window.chartColors.grey,
+          ]
+        }],
+
+        // These labels appear in the legend and in the tooltips when hovering different arcs
+        labels: [
+            'Down(10)',
+            'Unavailable(20)',
+            'Up(312)',
+            'Maintenance(15)'
+        ]
+      },
+      options: {
+        responsive: true,
+        legend: {
+          position: 'left',
+        }
+      }
+    };
+
+    window.onload = function() {
+      var ctx = document.getElementById('chart-area').getContext('2d');
+      window.myPie = new Chart(ctx, config);
+    };
+  </script>
+</body>
+
+</html>
